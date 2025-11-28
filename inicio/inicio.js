@@ -6,7 +6,7 @@ const loaderContainer = document.querySelector(".loader");
 
     window.addEventListener("keydown", (event) => {
         if (event.defaultPrevented) return;
-        if (event.code === "KeyZ"|| event.code === "Equal" || event.code === "NumpadAdd") {
+        if (event.code === "KeyZ"|| event.code === "Equal" || event.code === "NumpadAdd" || event.key === "+") {
             console.log("Start button pressed");
             startButton.src = "btn-pressed.jpg";//cambia la imagen al estado presionado
             setTimeout(() => {
@@ -14,7 +14,7 @@ const loaderContainer = document.querySelector(".loader");
             loaderContainer.style.display = "block";
                 setTimeout(() => {
                     //ACÁ TENES QUE CAMBIAR LA RUTA AL NUCLEO1
-                window.location.href = "nucleo1.html";
+                window.location.href = "../instrucciones.html";
                 }, 1000);//supuestamente es el tiempo que tarda en cargar el nucleo1
             }, 1000);//tiempo que el boton se ve presionado
       }
