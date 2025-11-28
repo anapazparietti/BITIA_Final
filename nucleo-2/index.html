@@ -1,0 +1,138 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nucleo 2</title>
+    <link rel="stylesheet" href="base-nucleo2.css">
+    <link rel="stylesheet" href="desktop.css">
+</head>
+<body>
+
+<main class="desktop"> 
+        <aside class="widgets">
+            <div class="widget">
+                <img src="../img/calendar-widget.png"  class="widget-img" alt="">
+                <h5 class="widget-name">Calendario</h5>
+            </div>
+            <div class="widget">
+                <img src="../img/player-widget.png" class="widget-img" alt="">
+                <h5 class="widget-name">Reproductor</h5>
+            </div>
+            <div class="widget">
+                <img src="img/nucleo3-bloqueado.png" id="nucleo3" class="widget-img" alt="">
+                <h5 class="widget-name">Mezclador</h5>
+            </div>
+        </aside>
+
+        <div class="nucleo-2">
+<!-- FLOW HABLANDO -->
+         <div class="loop">
+            <div id="loop-dialogo" class="bubble bubble-bottom-left">
+                <p id="dialogo">Estamos en el reproductor. Te enterarás sobre la IA en la música, canciones hechas con IA y demandas por copyright.</p>
+            </div>  
+            <img src="../img/loop.png" alt="Imagen de loop, ayudante virtual">
+        </div>
+
+<!-- CONTENIDO DEL NUCLEO 2 -->
+    <div class="reproductor">
+     <!-- fondo del reproductor y botones-->
+        <div class="fondo">
+        <img src="img/reproductor.png" alt="reproductor de música Nucleo 3">
+         <!-- controles del reproductor -->
+        <ol class="contenedor-botones">
+            <li> <button class="btn" id="copyright">Copyright</button> </li>
+            <li> <button class="btn" id="canciones">Canciones</button> </li>
+            <li> <button class="btn" id="demandas">Demandas</button> </li>
+        </ol>
+
+<div class="extras">
+<button class="pausar"><img src="img/despausa.png" alt=""></button>
+<div class="progreso">
+    <img src="img/linea.png" alt="">
+</div>
+</div>
+
+
+        </div>
+    <!-- INFORMACION SOBRE EL NUCLEO 2 -->
+     <div class="info-nucleo2">
+    <div class="centro">
+        <article class="copyright categoria video">
+            <video id="copyright-video" src="video/copyright.mp4"></video>
+        </article>
+        <article class="categoria canciones">
+            <h2>Canciones</h2>
+            <h1>Hechas con IAs musicales y reales</h1>
+            <ul>
+                <li>
+                    <button ><img class="song" src="img/dust.png" alt=""></button>
+                    <p class="hide-msj">Es una banda creada con IA.Su tema “Dust on the Wind” se volvió viral en 2025 y reveló cómo la IA puede generar música, voces e imágenes, abriendo el debate sobre autoría y creatividad artificial.</p>
+                </li>
+                <li>
+                    <button ><img class="song" src="img/rumbaCongo.png" alt=""></button>
+                     <p class="hide-msj">Es una creación hecha con IA que imita música afro-cubana. La banda y su historia son ficticias, mostrando cómo la IA puede crear artistas. Poniendo en duda los límites entre lo real y lo artificial.</p>
+                </li>
+                <li>
+                    <button ><img class="song" src="img/heart.png" alt=""></button>
+                     <p class="hide-msj">Fue creada por el usuario anónimo Ghostwriter con IA, imitando las voces de Drake y The Weeknd. Los artistas no participaron.El tema se volvió viral y fue eliminado por violar derechos de autor.</p>
+                </li>
+                <li>
+                    <button ><img class="song" src="img/nostalgia.png" alt=""></button>
+                     <p class="hide-msj">Canción del proyecto FlowGPT que utiliza voces generadas por IA para imitar a artistas como Bad Bunny, Daddy Yankee y Justin Bieber. La canción se volvió viral y Bad Bunny denunció el uso no autorizado de su voz.</p>
+                </li>
+                <li>
+                    <button ><img class="song" src="img/pasarella.png" alt=""></button>
+                     <p class="hide-msj">Canción de Emilia junto a Six Sex, lanzada en 2025.Combina pop y ritmos urbanos. A diferencia de otros casos recientes de música generada con IA, esta es una composición original, creada e interpretada por las artistas sin uso de IA.</p>
+                </li>
+            </ul>
+        </article>
+        <article class="demandas categoria">
+            <h2>Demanda</h2>
+            <div id="cuerpo-demanda"></div>
+        </article>
+     </div>
+     <div class="derecha">
+        <article class="copyright categoria">
+            <div class="visual">
+                <video src="video/efecto1.mp4" autoplay loop muted></video>
+            </div>
+        </article>
+        <article class="categoria canciones">
+            <div class="visual">
+                <video id="canciones-video" src="video/dustontheWind.mp4"></video>
+            </div>
+        </article>
+        <article class="demandas categoria">
+            <ul>
+                <li><button><img class="btn-demanda" src="img/demanda1.png" alt=""></button></li>
+                <li><button><img class="btn-demanda" src="img/demanda2.png" alt="" id="demanda2"></button></li> 
+            </ul>
+        </article>
+     </div>
+     </div>
+
+    </div>
+
+     
+
+</div>
+
+<!---------- BARRA DE TAREAS ---------->
+        <div class="taskbar">
+            <img class="taskbar-logo" src="../img/windows-vista-icon-seeklogo.png" alt="">
+            <!-- PESTAÑA DEL NUCLEO 2 -->
+            <div class="pestaña-nucleo2">
+                <img src="img/copyright.png" alt="estás en el núcleo de copyright">
+            </div>
+        </div>
+    </main>
+
+
+<!-- Scripts -->
+<script src="js/btn.js"></script>
+<script src="js/dialogo.js"></script>
+<script src="js/songs.js"></script>
+<script src="js/demanda.js"></script>
+<script src="js/copyright.js"></script>
+</body>
+</html>
