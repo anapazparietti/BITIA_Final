@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const cuadro = document.getElementById("dialogo");
   const loop = document.querySelector(".loop");
   const nucleo3 = document.getElementById("nucleo3");
+  const nucleo3Img = document.getElementById("nucleo3Img");
 
   let indice = 0;
   
@@ -80,9 +81,8 @@ function ultimoDialogo() {
   setTimeout(() => {
     indice = dialogos.length - 1;  // ✔ fijar índice correcto
     loop.style.display = "block";
-    nucleo3.innerHTML = `<div><a href="Nucleo3.html">
-      <img src="img/nucleo3-desbloqueado.png" alt="">
-    </a></div>`;
+    nucleo3.href = "Nucleo3.html";
+    nucleo3Img.src="img/nucleo3-desbloqueado.png";
 
     renderDialogo(); // ahora sí muestra dialogoN2-4.png
     console.log("Se muestra el último diálogo.");
