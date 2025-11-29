@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (event) => {
       // CAMBIO: Ahora detecta la tecla "+" en lugar de "KeyZ"
       if (event.key === "+") {
-        if (indice < dialogos.length - 1){
+        if (indice < dialogos.length - 1) {
           console.log("Presionaste +");
           indice++;
           renderDialogo();
@@ -75,18 +75,22 @@ document.addEventListener("DOMContentLoaded", () => {
     loopIsVisible = false;
   }
 
-  // --- Último diálogo después de 30 segundos ---
-  function ultimoDialogo() {
-    console.log("El último diálogo se muestra después de 30 segundos");
-    setTimeout(() => {
-      loop.style.display = "block"; // muestra el loop
-      nucleo3.src = "img/nucleo3-desbloqueado.png"; // cambia la imagen
-      renderDialogo();
-      console.log("Se muestra el loop con el diálogo 2.");
-      loopIsVisible = true;
-      pauseVideosIfLoopVisible();
-    }, 30000);
-  }
+function ultimoDialogo() {
+  console.log("El último diálogo se muestra después de 30 segundos");
+  setTimeout(() => {
+    indice = dialogos.length - 1;  // ✔ fijar índice correcto
+    loop.style.display = "block";
+    nucleo3.innerHTML = `<div><a href="Nucleo3.html">
+      <img src="img/nucleo3-desbloqueado.png" alt="">
+    </a></div>`;
+
+    renderDialogo(); // ahora sí muestra dialogoN2-4.png
+    console.log("Se muestra el último diálogo.");
+    loopIsVisible = true;
+    pauseVideosIfLoopVisible();
+  }, 30000);
+}
+
 
   // --- MutationObserver: detectar si aparece un nuevo video de demandas ---
   const observer = new MutationObserver(() => {

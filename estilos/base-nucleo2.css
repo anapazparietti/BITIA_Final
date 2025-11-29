@@ -43,17 +43,23 @@
 
 
 .bubble {
-  position: relative;
+  position: absolute;
+  left: 100%;
+  bottom: calc(15% + 10rem);
   font-size: 1.1rem;
   font-weight: 400;
   line-height: 1.8;
-  width: 300px;
+  width: auto;
   background: #fff;
   border-radius: 1rem;
-  padding: 0.5rem;
+  padding: 1.5rem;
   text-align: center;
   color: #000;
   margin-bottom: 1rem;
+  img{
+    width: 15rem;
+    height: auto;
+  }
 }
 
 .bubble-bottom-left:before {
