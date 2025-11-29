@@ -4,8 +4,8 @@ var loopVisible = true;
 
 const cuadroDialogo = document.getElementById("loop-d");
 const loopC = document.querySelector(".loop");
-const nucleo2Des = document.getElementById("nucleo2");
-
+const nucleo2 = document.getElementById("nucleo2");
+const nucleo2Img = document.getElementById("nucleo2Img");
 let indiceD = 0;
 
 const dialogosLoop = [
@@ -19,9 +19,9 @@ function renderDialogo() {
 }
 
 setTimeout(() => {
-    nucleo2.innerHTML = `<div><a href="Nucleo2.html">
-      <img src="img/player-widget.png" alt="">
-    </a></div>`;  
+    nucleo2.href = "Nucleo2.html";  
+      nucleo2Img.src = "img/player-widget.png";
+   
 }, 5000);
 
 // --- Mostrar el diálogo inicial si el loop está visible ---
