@@ -1,42 +1,51 @@
-const dialogos = [
-  "Primero comenzaremos aprendiendo sobre la evolución de la música hasta la creación de la IA",
-  "Utilizá el scroll para desplazarte !Buena suerte¡"
-];
+document.addEventListener("DOMContentLoaded", () => {
 
-var loopImagenes=Array("../img/loop-feliz.png","../img/loop.png");
+var loopVisible = true;  
 
 const cuadroDialogo = document.getElementById("loop-d");
-var imagenLoop = document.querySelector(".loop-img");
+const loopC = document.querySelector(".loop");
+
 
 let indiceD = 0;
-var indiceLoop = 0;
 
-cuadroDialogo.style.display = 'block';
-imagenLoop.style.display ='block';
-console.log("Loop hablaaaa");
+const dialogosLoop = [
+  "../Loops/nucleo1d1.png",
+  "../Loops/nucleo1d2.png"
+];
 
-  
-  //PROBAR PONER ESTO EN EL CODIGO SI ES QUE LLEGA A FALLAR, YA QUE DE LA MANERA EN QUE ESTÁ AHORA, SE ESCUCHA A LA Z EN TODA LA PAGINA, LO QUE SI BIEN FACILITA PASAR LOS DIALOGOS DE LOOP, PUEDE ENTRAR EN CONFLICTO CON EL CODIGO DE ANA Y NACHO
-  //cuadroDialogo.tabIndex = 0;
-  //cuadroDialogo.focus();
-
-  //cuadroDialogo.addEventListener('keydown', (e) => { etc, etc, etc.
-
-  document.addEventListener('keydown', (e) => {
-  if (e.key === 'z' || e.key === 'Z') {
-    indiceD++;
-    indiceLoop++;
-
-    if (indiceD < dialogos.length) {
-      cuadroDialogo.textContent = dialogos[indiceD];
-      imagenLoop.src = loopImagenes[indiceLoop];
-    } else {
-      cuadroDialogo.style.display = "none";
-      imagenLoop.style.display = "none";
-      widgetClickeable();
-    }
+function renderDialogo() {
+    cuadroDialogo.src = dialogosLoop[indiceD];
+    console.log("Diálogo mostrado: " + dialogosLoop[indiceD]);
   }
-});
+
+// --- Mostrar el diálogo inicial si el loop está visible ---
+
+  if (getComputedStyle(loopC).display === "block") {
+    renderDialogo();
+    loopVisible = true;
+
+    document.addEventListener("keydown", (event) => {
+      // CAMBIO: Ahora detecta la tecla "+" en lugar de "KeyZ"
+      if (event.key === "+") {
+        if (indiceD < dialogosLoop.length - 1){
+          console.log("Presionaste +");
+          indiceD++;
+          renderDialogo();
+          if (indiceD === 4) {
+          loopC.style.display = "none";
+          indiceD++;
+          ultimoDialogo();
+          loopVisible = false;
+        }
+        } else {
+          loopC.style.display = "none";
+          loopVisible = false;
+        }
+      }
+    });
+  } else {
+    loopVisible = false;
+  }
 
   // ========== CAMBIAR DIALOGO CON CLICK ==========
 
@@ -44,8 +53,8 @@ console.log("Loop hablaaaa");
   //indiceD++;
   //indiceLoop++;
 
-  //if (indiceD < dialogos.length) {
-    //cuadroDialogo.textContent = dialogos[indiceD];
+  //if (indiceD < dialogosLoop.length) {
+    //cuadroDialogo.textContent = dialogosLoop[indiceD];
     //imagenLoop.src = loopImagenes[indiceLoop];
     //} else {
     //cuadroDialogo.style.display = "none";
@@ -54,3 +63,4 @@ console.log("Loop hablaaaa");
     //widgetClickeable();
     //}
   //});
+});
