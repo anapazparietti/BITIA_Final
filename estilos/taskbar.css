@@ -1,0 +1,23 @@
+
+.taskbar{
+    width: 100vw;
+    background: linear-gradient(180deg, #8B96B1 11.54%, #929295 14.9%, #132F47 75%);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+}
+
+.taskbar .taskbar-logo{
+    position: sticky;
+    width: 3vw;
+    left: 0.5rem;
+    cursor: pointer;
+}
+
+
+
+

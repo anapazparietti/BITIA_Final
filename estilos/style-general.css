@@ -1,0 +1,94 @@
+@import url('https://fonts.cdnfonts.com/css/segoe-ui-variable-static-display');
+
+
+html{
+    font-size: 1rem;
+    font-family: 'Segoe UI Variable Static Display', sans-serif;
+    color: white;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    :root{
+    --bg:#f3f3f6;
+    --panel:#ececf0;
+    --card:#d9d9de;
+    --accent:#f9f9fb;
+    --highlight:#f9d3ff;
+    --muted:#9b9ba6;
+  }
+
+  body{ 
+    font-family: var(--fuente-base);
+    overflow: hidden;
+    background-color: #7c8597;
+  }
+  .container{
+    background-image: url(../img/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100%;
+    height: 100vh;
+    display: flex;
+    padding:20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+
+  /* SIDEBAR */
+  .rightbar{
+    background: #00000000;
+    padding:14px;
+    border-radius:8px;
+    width: 25vh;
+    height:560px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:center !important;
+    justify-content:center !important;
+    z-index: 20;
+  }
+
+
+  .rightbar img{
+    width: 115px;
+    border-radius:10px;
+    transition:transform .15s, box-shadow .15s;
+    z-index: 20;
+  }
+  .rightbar img.focused{
+    outline:4px solid rgba(255,255,255,0.7);
+    transform:scale(1.05);
+    box-shadow:0 8px 20px rgba(0,0,0,0.25);
+  }
+
+  .barra{
+    position: absolute;
+    background-image: url(Diseño/barra\ de\ abajo.png);
+    width: 100%;
+    height: 10vh;
+    top: 90vh;
+  }
+
+  .all{
+    display: flex;
+    flex-direction: column;
+    width: 130vh;
+    gap: 0 !important;
+    padding: 0 !important;
+  }
+
+  @keyframes pulso {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.12); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+  }

@@ -1,6 +1,6 @@
 var loopIsVisible = true;
 
-// ✅ Mostrar el valor de loopIsVisible cada segundo
+// Mostrar el valor de loopIsVisible cada segundo
 setInterval(() => {
   console.log("loopIsVisible:", loopIsVisible);
   if(typeof enCancionApp !== 'undefined') {
@@ -10,7 +10,6 @@ setInterval(() => {
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  const songVideo = document.getElementById("canciones-video");
   const cuadro = document.getElementById("dialogo");
   const loop = document.querySelector(".loop");
   const nucleo3 = document.getElementById("nucleo3");
@@ -18,16 +17,19 @@ document.addEventListener("DOMContentLoaded", () => {
   let indice = 0;
   
   const dialogos = [
-    "Estamos en el reproductor. Te enterarás sobre la IA en la música, canciones hechas con IA y demandas por copyright.",
-    "Mira! Se ha desbloquedo otra aplicación. Vayamos a ver que es. ¡Qué emocionante!",
+    "img/nucleo-2/dialogoN2-0.png",
+    "img/nucleo-2/dialogoN2-1.png",
+    "img/nucleo-2/dialogoN2-2.png",
+    "img/nucleo-2/dialogoN2-3.png",
+    "img/nucleo-2/dialogoN2-4.png",
   ];
 
   function renderDialogo() {
-    cuadro.textContent = dialogos[indice];
+    cuadro.src = dialogos[indice];
     console.log("Diálogo mostrado: " + dialogos[indice]);
   }
 
-  // --- 🔁 Función para pausar todos los videos si loopIsVisible === true ---
+  // ---  Función para pausar todos los videos si loopIsVisible === true ---
   function pauseVideosIfLoopVisible() {
     if (loopIsVisible) {
       const songVideo = document.getElementById("canciones-video");
@@ -53,12 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("keydown", (event) => {
       // CAMBIO: Ahora detecta la tecla "+" en lugar de "KeyZ"
       if (event.key === "+") {
-        console.log("Presionaste +");
-        if (indice === 0) {
+        if (indice < dialogos.length - 1){
+          console.log("Presionaste +");
+          indice++;
+          renderDialogo();
+          if (indice === 4) {
           loop.style.display = "none";
           indice++;
           ultimoDialogo();
           loopIsVisible = false;
+        }
         } else {
           loop.style.display = "none";
           loopIsVisible = false;
@@ -82,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 30000);
   }
 
-  // --- 👁️ MutationObserver: detectar si aparece un nuevo video de demandas ---
+  // --- MutationObserver: detectar si aparece un nuevo video de demandas ---
   const observer = new MutationObserver(() => {
     pauseVideosIfLoopVisible();
   });

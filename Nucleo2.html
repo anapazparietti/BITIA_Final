@@ -5,138 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Panel de composición - demo</title>
 
+
+<link rel="stylesheet" href="estilos/style-general.css">
 <link rel="stylesheet" href="estilos/base-nucleo2.css">
-<link rel="stylesheet" href="estilos/desktop.css">
+<link rel="stylesheet" href="estilos/taskbar.css">
 
-<style>
-  :root{
-    --bg:#f3f3f6;
-    --panel:#ececf0;
-    --card:#d9d9de;
-    --accent:#f9f9fb;
-    --highlight:#f9d3ff;
-    --muted:#9b9ba6;
-  }
-  body{ margin:0; font-family:Inter,system-ui,Arial; background-image: url(Diseño/Frame\ 4.png); color:#222; 
-  background-size: cover;
-  }
-  .container{
-    max-width: 100%;
-    height: 90vh;
-    display: flex;
-    background:#ffffff00;
-    padding:20px;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .container2{
-    box-shadow:0 6px 24px rgba(0,0,0,0.08);
-    display:flex;
-    gap:18px;
-    background-size: cover;
-    padding-top: 40px;
-    align-items:center;
-    justify-content: center;
-    width: 115vh;
-    border-radius: 10px;
-    height: 84vh;
-    z-index: 2;
-  }
-
-  .container2 img{
-    width: 110vh;
-  }
-
-  /* SIDEBAR */
-  .rightbar{
-    background: #00000000;
-    padding:14px;
-    border-radius:8px;
-    width: 25vh;
-    height:560px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    align-items:center !important;
-    justify-content:center !important;
-    z-index: 20;
-  }
-
-  /* LED */
-  .status-led {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      margin-bottom: 25px; 
-      background-color: #a6ff00; 
-      box-shadow: 0 0 15px #a6ff00, 0 0 5px #fff;
-      border: 2px solid rgba(255,255,255,0.3);
-  }
-
-  .rightbar img{
-    width: 115px;
-    border-radius:10px;
-    transition:transform .15s, box-shadow .15s;
-    z-index: 20;
-  }
-  .rightbar img.focused{
-    outline:4px solid rgba(255,255,255,0.7);
-    transform:scale(1.05);
-    box-shadow:0 8px 20px rgba(0,0,0,0.25);
-  }
-
-  .barra{
-    position: absolute;
-    background-image: url(Diseño/barra\ de\ abajo.png);
-    width: 100%;
-    height: 10vh;
-    top: 90vh;
-  }
-
-  .all{
-    display: flex;
-    flex-direction: column;
-    width: 130vh;
-    gap: 0 !important;
-    padding: 0 !important;
-  }
-
-  .loop.oculto {
-    opacity: 0;
-    pointer-events: none; 
-  }
-
-  /* Botón centrado */
-  .boton-centro {
-    position: fixed;
-    top: 62.5%;
-    left: 37.5%;
-    transform: translate(-50%, -50%);
-    animation: pulso 1.5s infinite ease-in-out;
-    cursor: pointer;
-    z-index: 20;
-  }
-
-  .boton-centro img {
-    width: 160px;
-    transition: transform 0.2s ease;
-  }
-
-  @keyframes pulso {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.12); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-  }
-
-  .boton-centro:hover img {
-    transform: scale(1.2);
-    filter: brightness(1.2);
-  }
-
-</style>
-
-<link rel="stylesheet" href="nucleo-1/style.css">
 </head>
 <body>
 
@@ -146,8 +19,8 @@
       <div class="nucleo-2">
         <div class="loop">
             <div id="loop-dialogo" class="bubble bubble-bottom-left">
-                <p id="dialogo">Estamos en el reproductor. Te enterarás sobre la IA en la música, canciones hechas con IA y demandas por copyright.</p>
-            </div>  
+                <img id="dialogo" src="#" alt="dialogos de loop">
+            </div>
             <img src="../img/loop.png" alt="Imagen de loop, ayudante virtual">
         </div>
 
@@ -166,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="info-nucleo2">
             <div class="centro">
                 <article class="copyright categoria video">
@@ -217,7 +90,7 @@
                 <article class="demandas categoria">
                     <ul>
                         <li><button><img class="btn-demanda" src="img/demanda1.png" alt=""></button></li>
-                        <li><button><img class="btn-demanda" src="img/demanda2.png" alt="" id="demanda2"></button></li> 
+                        <li><button><img class="btn-demanda" src="img/demanda2.png" alt="" id="demanda2"></button></li>
                     </ul>
                 </article>
              </div>
@@ -226,22 +99,22 @@
       </div>
     </div>
   </div>
-
+<!----------------- WIDGETS -->
   <aside class="rightbar" id="rightBar">
-    <div class="status-led"></div>
-
     <div><a href="Nucleo1.html"><img src="Diseño/Frame 4 (1).png" alt=""></a></div>
     <div><a href="Nucleo2.html"><img src="Diseño/Frame 5.png" alt=""></a></div>
     <div><a href="nucleo3.html"><img src="Diseño/Frame 6.png" alt=""></a></div>
   </aside>
 </div>
 
-<div class="barra"></div>
-<div class="loop" id="mensaje"><img src="Diseño/Frame 18 (2).png" alt="" style="display: none !important;"></div>
-
-<div class="boton-centro">
-  <img src="Diseño/boton.png" alt="Botón central" id="botonCentral" style="display: none !important;">
-</div>
+<!---------- BARRA DE TAREAS ---------->
+        <div class="taskbar">
+            <img class="taskbar-logo" src="../img/windows-vista-icon-seeklogo.png" alt="">
+            <!-- PESTAÑA DEL NUCLEO 2 -->
+            <div class="pestaña-nucleo2">
+                <img src="img/copyright.png" alt="estás en el núcleo de copyright">
+            </div>
+        </div>
 
 <script src="js/btn.js"></script>
 <script src="js/dialogo.js"></script>
@@ -252,8 +125,8 @@
 <script>
     const KEYS = window.parent.BITIA_KEYS || { ACCION: '+', ARRIBA: '8', ABAJO: '0', PLAY: '-', SALIR: 'e' };
 
-    window.modoSidebar = false; 
-    
+    window.modoSidebar = false;
+
     const rightBar = document.getElementById('rightBar');
     const rightBarImgs = rightBar.querySelectorAll('img');
     let rightBarIndex = 0;
@@ -271,10 +144,10 @@
     // === CONTROL DE MODO ===
     let accionTimeout = null;
     let accionLongPress = false; // Bandera para distinguir click de mantener
-    
+
     window.addEventListener('keydown', (e) => {
         // 🔥 PREVENIR REPETICIÓN AUTOMÁTICA 🔥
-        if (e.repeat) return; 
+        if (e.repeat) return;
 
         const key = e.key.toLowerCase();
 
@@ -283,11 +156,11 @@
             accionLongPress = false; // Reseteamos al empezar a presionar
             accionTimeout = setTimeout(() => {
                 accionLongPress = true; // ¡Ahora sí es larga!
-                
+
                 window.modoSidebar = !window.modoSidebar;
                 console.log("Modo Sidebar:", window.modoSidebar);
-                updateRightbarFocus(); 
-                
+                updateRightbarFocus();
+
                 try {
                     const app = window.parent.app;
                     if (window.modoSidebar) app.setNucleo(0); // Amarillo
@@ -305,7 +178,7 @@
                 clearTimeout(accionTimeout);
                 accionTimeout = null;
             }
-            
+
             // ACCION CORTA (Click)
             // Solo ejecutamos si NO fue larga
             if (!accionLongPress) {
@@ -314,15 +187,15 @@
                     const target = rightBarImgs[rightBarIndex];
                     const parentLink = target.closest('a');
                     if (parentLink) {
-                        window.location.href = parentLink.href; 
+                        window.location.href = parentLink.href;
                     }
                 }
                 // Si estamos en la App, btn.js se encarga
             }
-            
+
             accionLongPress = false; // Limpieza final
         }
-        
+
         if (e.key.toLowerCase() === KEYS.SALIR) {
             window.location.href = 'inicio.html';
         }
@@ -344,7 +217,7 @@
 
     // === SCROLL DE RATÓN/TRACKPAD === (NUEVO CÓDIGO)
     window.addEventListener('wheel', (e) => {
-        
+
         e.preventDefault(); // Evita el scroll nativo
 
         // Determinamos la dirección: deltaY > 0 es scroll hacia abajo (Avanza, +1), deltaY < 0 es scroll hacia arriba (Retrocede, -1).
@@ -352,13 +225,13 @@
 
         // Si hay movimiento (delta no es 0)
         if (delta !== 0) {
-            
+
             if (window.modoSidebar) {
                 // Mover Sidebar, imitando el Encoder
                 rightBarIndex = (rightBarIndex + delta + rightBarImgs.length) % rightBarImgs.length;
                 updateRightbarFocus();
             }
-            // Importante: Si window.modoSidebar es false, el scroll no hace nada, 
+            // Importante: Si window.modoSidebar es false, el scroll no hace nada,
             // ya que no hay otra acción definida para el encoder en este archivo.
         }
     }, { passive: false }); // Se añade { passive: false } para asegurar que preventDefault() funciona
@@ -366,7 +239,7 @@
 
     // INIT
     updateRightbarFocus();
-    
+
     document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
             try {
