@@ -382,11 +382,11 @@
         <div>
           <a href="Nucleo1.html"><img src="Diseño/Frame 4 (1).png" alt="" /></a>
         </div>
-        <div>
-          <a href="Nucleo2.html"><img src="Diseño/Frame 5.png" alt="" /></a>
+        <div id="nucleo2">
+          <a href="Nucleo2.html"><img src="img/reproductor-gris.png" alt="" /></a>
         </div>
         <div>
-          <a href="nucleo3.html"><img src="Diseño/Frame 6.png" alt="" /></a>
+          <a href="#"><img src="img/nucleo3-bloqueado.png" alt="" /></a>
         </div>
       </aside>
       <div class="loop">
@@ -588,11 +588,31 @@
             if (indiceCarrusel < 0) indiceCarrusel = 0;
             if (indiceCarrusel > tarjetas.length - 1) indiceCarrusel = tarjetas.length - 1;
       
-            // Actualizamos la vista 3D
             actualizarCarrusel();
           }
         }
-      }); 
+      });
+
+      // ======= MUSICA PARA EL NUCLEO 1 =======
+      // PREGUNTAR A SARA DONDE ESTAN LOS CAMBIOS DE ESTADO (nucleos) PARA PODER INICIAR LA MUSICA CON:
+      // iniciarMusica();
+
+      const audioFondo = document.getElementById('musicaNucleo1');
+      let musicaIniciada = false; 
+
+      async function iniciarMusica() {
+        if (musicaIniciada) return; 
+        
+      audioFondo.loop = true; 
+        try {
+          await audioFondo.play();
+          musicaIniciada = true;
+          console.log("Música de fondo iniciada por interacción del usuario.");
+        } catch (error) {
+        // Si el navegador bloqueo la reproduccion.
+        console.warn("Reproducción de audio bloqueada. Se intentará de nuevo con la siguiente interacción.", error);
+        }
+    } 
     </script>
   </body>
 </html>
