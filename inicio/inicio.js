@@ -8,7 +8,7 @@ const loaderContainer = document.querySelector(".loader");
         if (event.defaultPrevented) return;
         if (event.code === "KeyZ"|| event.code === "Equal" || event.code === "NumpadAdd" || event.key === "+") {
             console.log("Start button pressed");
-            startButton.src = "btn-pressed.jpg";//cambia la imagen al estado presionado
+            startButton.src = "loopFace2.png";//cambia la imagen al estado presionado
             setTimeout(() => {
             startContainer.style.display = "none";
             loaderContainer.style.display = "block";
