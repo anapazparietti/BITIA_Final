@@ -22,5 +22,7 @@ video = document.getElementById("copyright-video");
         canciones.addEventListener("click", restartVideo);
     };
 
+window.restartCopyrightVideo = restartVideo; // acceso externo
+
 
 });

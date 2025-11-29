@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- FUNCIÓN LÓGICA CENTRAL (Mouse y Encoder la usan) ---
   function cambiarIndice(direccion) {
     // Si loopIsVisible es true, bloqueamos el movimiento
-    if (typeof loopIsVisible !== 'undefined' && loopIsVisible) return;
+    if (typeof loopIsVisible !== 'undefined' && loopIsVisible || window.modoSidebar) return;
 
     if (direccion > 0) {
        // AVANZAR (Rueda abajo / Encoder CW)
@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Lógica de estados ---
     if (index === 1) {
       enCancionApp = true;
+      restartCopyrightVideo();
       if (window.resetSongSelection) window.resetSongSelection = true;
     } else {
       enCancionApp = false;
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (index === 2) {
       enDemandasApp = true;
+      restartCopyrightVideo();
     } else {   
       enDemandasApp = false;
       if(typeof closeActiveDemanda === 'function') closeActiveDemanda();

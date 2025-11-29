@@ -1,12 +1,12 @@
 var loopIsVisible = true;
 
-// Mostrar el valor de loopIsVisible cada segundo
-setInterval(() => {
-  console.log("loopIsVisible:", loopIsVisible);
-  if(typeof enCancionApp !== 'undefined') {
-      console.log("enCancionApp:", enCancionApp);
-  }
-}, 1000);
+// // Mostrar el valor de loopIsVisible cada segundo
+// setInterval(() => {
+//   console.log("loopIsVisible:", loopIsVisible);
+//   if(typeof enCancionApp !== 'undefined') {
+//       console.log("enCancionApp:", enCancionApp);
+//   }
+// }, 1000);
 
 document.addEventListener("DOMContentLoaded", () => {
 

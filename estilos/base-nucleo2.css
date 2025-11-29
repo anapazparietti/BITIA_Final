@@ -183,7 +183,12 @@
 }
 
 /*-----CONTENEDOR CENTRO----*/
-
+.centro button{
+    background: none;
+    width: auto;
+    height: auto;
+    border:none;
+}
 
 .info-nucleo2 .centro{
     width:60%;
