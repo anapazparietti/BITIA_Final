@@ -3,12 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Historia de la Música - Bitia</title>
-    <link rel="stylesheet" href="nucleo-1/style.css" />
-    
+
+    <title>Historia de la Música - Bitia Núcleo 1</title>
+
+    <link rel="shortcut icon" href="img/icon.ico" type="image/x-icon">
+
     <style>
       /* ==== ESTILOS GENERALES ==== */
-
+      
       html{
       font-size: 1rem;
       }
@@ -22,9 +24,10 @@
       body {
       margin: 0;
       overflow: hidden;
-      background-image: url(Diseño/Frame\ 4.png);
+      background-image: url(Diseño/background.jpg);
+      background-size:cover;
+      background-position: center;
       color: #222;
-      background-size: cover;
       font-family: "Segoe UI", sans-serif;
       }
 
@@ -205,6 +208,7 @@
       /* ==== LED DE ESTADO ==== */
 
       .status-led {
+      visibility: hidden;
       width: 12px;
       height: 12px;
       border-radius: 50%;
@@ -258,15 +262,17 @@
 
       /*======= MEDIA QUERIES PARA LA PANTALLA FINAL =======*/
 
-      /*----------@media (max-width: 1024px) {
-      .rightbar{
-      padding-top: 1rem;
-      }
+      @media (max-width: 1024px) {
       .taskbar .taskbar-logo{
-      width: 4vw;
-      left: 0.5rem;
+        width: 4vw;
+        left: 0.5rem;
       }
-      }----------*/
+
+      body{
+        background-repeat: no-repeat;
+        background-size: auto;
+      }
+    }
     </style>
   </head>
   
@@ -274,7 +280,7 @@
 
   <body>
     <div class="container" id="mainContainer">
-      <audio id="musica-nucleo-1" src="/Musicas/frutiger-song-nucleo-1.mp3"></audio>
+      <audio id="musicaNucleo1" src="/Musicas/frutiger-song-nucleo-1.mp3" preload="auto"></audio>
       <div class="container2">
         <div class="ventana" data-ventana="calendario">
           <!---------- Contenedor 3D de todas las ventanas del calendario ---------->
@@ -383,11 +389,11 @@
           <a href="nucleo3.html"><img src="Diseño/Frame 6.png" alt="" /></a>
         </div>
       </aside>
-      <div class="loop" id="loop">
-        <div class="loop-dialogo" id="loop-d">
-          <p>Primero comenzaremos aprendiendo sobre la evolución de la música hasta la creación de la IA</p>
+      <div class="loop">
+        <div class="loop-dialogo">
+          <img id="loop-d" src="#" alt="dialogos de loop">
         </div>
-        <img src="/img/loop-feliz.png" class="loop-img" alt="Imagen de loop ayudante virtual">
+        <img src="../img/loop.png" alt="Imagen de loop ayudante virtual">
       </div>
     </div>
     <div class="barra">
